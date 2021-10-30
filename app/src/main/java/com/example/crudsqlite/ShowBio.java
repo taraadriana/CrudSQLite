@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 public class ShowBio extends AppCompatActivity {
     protected Cursor cursor;
-    DbHelper dbHelper;
     TextView txNim, txName, txAlamat, txUsia, txGender;
     Button btnKembali;
 

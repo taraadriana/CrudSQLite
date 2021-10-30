@@ -12,7 +12,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class EditBio extends AppCompatActivity {
-    protected DbHelper dbHelper;
     Cursor cursor;
 
     EditText editNim, editName, editAlamat, editUsia, editGender;

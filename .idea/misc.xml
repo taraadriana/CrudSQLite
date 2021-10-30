@@ -4,8 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Microsoft/AndroidStudioProjects/CrudSQLite/app/src/main/res/layout/activity_create_bio.xml" value="0.2" />
+        <entry key="..\:/Users/Microsoft/AndroidStudioProjects/CrudSQLite/app/src/main/res/layout/activity_create_dosen.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Microsoft/AndroidStudioProjects/CrudSQLite/app/src/main/res/layout/activity_create_prestasi.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Microsoft/AndroidStudioProjects/CrudSQLite/app/src/main/res/layout/activity_dashboard.xml" value="0.18" />
         <entry key="..\:/Users/Microsoft/AndroidStudioProjects/CrudSQLite/app/src/main/res/layout/activity_edit_bio.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Microsoft/AndroidStudioProjects/CrudSQLite/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Users/Microsoft/AndroidStudioProjects/CrudSQLite/app/src/main/res/layout/activity_main2.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Microsoft/AndroidStudioProjects/CrudSQLite/app/src/main/res/layout/activity_show_bio.xml" value="0.20416666666666666" />
       </map>
     </option>

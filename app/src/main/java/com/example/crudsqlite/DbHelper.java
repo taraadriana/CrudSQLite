@@ -25,7 +25,9 @@ public class DbHelper extends SQLiteOpenHelper {
         try{
             String sql = "CREATE TABLE tb_mhs (nim integer primary key,"+" " +
                     "nama text, alamat text, usia integer, gender text);";
+
             db.execSQL(sql);
+
         }catch (Exception e){
             Log.e("error", "failed");
         }
@@ -37,7 +39,6 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     //menambah data
-
     public boolean insertData(int nim, String nama, String alamat,
                               int usia, String gender){
         try{
@@ -65,7 +66,6 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     //edit data
-
     public boolean editData(String nimOld, String nimNew, String nama,
                             String alamat, int usia, String gender){
         try{

@@ -1,7 +1,9 @@
 package com.example.crudsqlite;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     ListView listView;
     Button btnAdd;
     ArrayAdapter<String> arrayAdapter;
+    AlertDialog.Builder builder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         arrayListNim = new ArrayList<>();
         btnAdd = findViewById(R.id.btnNewList);
         listView = findViewById(R.id.listData);
+
+        builder = new AlertDialog.Builder(this);
 
         Cursor cursor = dbHelper.showData();
         if (cursor.getCount() > 0) {
@@ -76,11 +81,28 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, EditBio.class);
             intent.putExtra("MainNim", Integer.toString(arrayListNim.get(item.getGroupId())));
             startActivity(intent);
+
         } else if (item.getTitle() == "delete") {
-            dbHelper.deleteData(Integer.toString(arrayListNim.get(item.getGroupId())));
-            Intent intent = new Intent(MainActivity.this, MainActivity.class);
-            startActivity(intent);
-            MainActivity.this.finish();
+            builder.setMessage("do you want to delete this data?")
+                    .setCancelable(false)
+                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int which) {
+                            dbHelper.deleteData(Integer.toString(arrayListNim.get(item.getGroupId())));
+                            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                            startActivity(intent);
+                            MainActivity.this.finish();
+                        }
+                    })
+                    .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                        }
+                    });
+            AlertDialog alertDialog = builder.create();
+            alertDialog.setTitle("Delete Data");
+            alertDialog.show();
         } else {
             return false;
         }
